@@ -5,24 +5,14 @@ using UnityEngine.EventSystems;
 
 public class DropSlot : MonoBehaviour, IDropHandler
 {
+    // Método chamado quando um objeto é solto neste slot
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
+            // Reposiciona o objeto arrastado para o centro deste slot
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
